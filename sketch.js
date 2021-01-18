@@ -3,7 +3,6 @@ var pathImg,boyImg,cashImg,diamondsImg,jwelleryImg,swordImg,endImg;
 var treasureCollection = 0;
 
 var cashG,diamondsG,jwelleryG,swordGroup;
-
 var PLAY=1;
 var END=0;
 var gameState=1;
@@ -16,6 +15,7 @@ function preload(){
   jwelleryImg = loadImage("jwell.png");
   swordImg = loadImage("sword.png");
   endImg =loadImage("gameOver.png");
+
 }
 
 function setup(){
@@ -27,7 +27,7 @@ path=createSprite(200,200);
 path.addImage(pathImg);
 path.velocityY = 4;
   
-//creating boy running
+// creating boy running
 boy = createSprite(70,330,20,20);
 boy.addAnimation("SahilRunning",boyImg);
 boy.scale=0.08;
@@ -80,7 +80,7 @@ function draw() {
     else if (diamondsG.isTouching(boy)) {
       diamondsG.destroyEach();
       treasureCollection=treasureCollection+50;
-      
+
     }else if(jwelleryG.isTouching(boy)) {
       jwelleryG.destroyEach();
       treasureCollection=treasureCollection+50;
@@ -107,7 +107,7 @@ function draw() {
 
   drawSprites();
   textSize(20);
-  fill("aqua");
+  stroke("coral");
   text("Treasure: "+ treasureCollection,150,30);
   
 }
